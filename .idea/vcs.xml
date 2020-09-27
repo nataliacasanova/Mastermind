@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/devOps/devOps-artefacto/template-webflux" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/devOps/imvg-devops-natalia-casanova" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/devOps/prueba/imvg-ecosistema" vcs="Git" />
+  </component>
+</project>
