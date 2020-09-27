@@ -1,4 +1,6 @@
 public enum CodePeg {
 
-    WHITE,BLACK;
+    BLUE,RED,PINK,YELLOW,GREEN,ORANGE;
+
+
 }

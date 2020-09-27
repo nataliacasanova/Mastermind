@@ -14,6 +14,7 @@
         COORDINATE_TO_MOVE("Target coordinate to move"),
         PLAYER_WIN(" Player: You win!!! :-)"),
         RESUME("Do you want to continue"),
+        MAX_INTENTS_APPROACHED( "You approached the max intents allowed"),
         NULL_MESSAGE();
 
         private String message;

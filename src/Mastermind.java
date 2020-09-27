@@ -1,20 +1,40 @@
 public class Mastermind {
 
     private Board board;
-    private CodeBreaker codeBreaker;
-    private CodeMaker codeMaker;
+    private Action makeSecretCode ;
+    private Action putPattern ;
+    private Action feedback ;
+
 
     private void play() {
+
+
         do {
             this.board = new Board();
-            this.codeMaker = new CodeMaker(board);
-            this.codeBreaker = new CodeBreaker(board);
-            this.board.write();
+            this.makeSecretCode =  new MakePatternCodePegAction(board);
+            this.putPattern = new PutPatternCodePegAction(board);
+            this.feedback  = new FeedBackAction(board);
+
+            boolean correctPattern;
+            boolean maxIntents;
+
+            makeSecretCode.execute();
             do {
-                this.turn.play();
-                this.board.write();
-            } while (!this.board.isTicTacToe(this.turn.getToken()));
-            this.turn.writeWinner();
+                putPattern.execute();
+                feedback.execute();
+                board.incrementCounter();
+                correctPattern = board.isCorrectPattern();
+                maxIntents  = board.maxIntentsComplete();
+
+                if(correctPattern)
+                    Message.PLAYER_WIN.writeln();
+                if(maxIntents)
+                    Message.MAX_INTENTS_APPROACHED.writeln();
+
+                board.write();
+            } while (!(correctPattern && maxIntents));
+
+
         } while (this.isResumedGame());
     }
 
